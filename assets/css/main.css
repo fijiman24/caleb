@@ -1,0 +1,231 @@
+/* green => rgb(21, 236, 21) */
+/* purple => rgb(211, 21, 236) */
+
+@font-face {
+    font-family: 'DOS';
+    src: url('../fonts/Perfect\ DOS\ VGA\ 437\ Win.ttf') format('truetype');
+}
+
+:root {
+    --main-color: rgba(255, 168, 59, 255);
+    --secondary-color: rgba(0, 0, 0, 255);
+    --button-hover-color: rgb(175, 114, 39);
+    --background-color: rgb(31, 20, 7);
+}
+
+body {
+    background-color: var(--background-color);
+    height: 100%;
+}
+
+p,
+h1,
+h2,
+h5,
+pre {
+    font-family: 'DOS', Helvetica, sans-serif;
+    color: var(--main-color);
+    filter: drop-shadow(0 1px 3px);
+}
+
+pre {
+    float: left;
+    z-index: 1000;
+}
+
+article {
+    margin: 40px 10px 0px 10px;
+    padding: 20px 30px;
+    border: 5px double var(--main-color);
+}
+
+.parent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.article-title {
+    margin-top: -40px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.article-title-container {
+    background-color: var(--background-color);
+    width: fit-content;
+}
+
+.project-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+
+.hoverable {
+    padding-left: 10px;
+}
+
+.hoverable:hover {
+    color: var(--secondary-color);
+    background-color: var(--main-color);
+}
+
+.card {
+    background-color: var(--background-color);
+    border: 5px double var(--main-color);
+    border-radius: 0px;
+    margin-bottom: 20px;
+    height: 95%;
+
+}
+
+.card:hover {
+    background-color: var(--main-color);
+    border: 5px double var(--secondary-color);
+    cursor: pointer;
+}
+
+.card-body>h5,
+.card-body>p {
+    color: var(--main-color);
+    filter: none;
+}
+
+.card:hover>.card-body>h5,
+.card:hover>.card-body>p {
+    color: var(--secondary-color);
+    filter: none;
+}
+
+.modal-content-container {
+    background-color: var(--main-color);
+    padding: 10px 3px;
+}
+
+.modal-content {
+    background-color: var(--main-color);
+    border: 5px double var(--secondary-color);
+    border-radius: 0px;
+}
+
+.modal-content h1,
+.modal-content p {
+    color: var(--secondary-color);
+    filter: none;
+}
+
+.modal-header {
+    border: none;
+    margin-bottom: -20px;
+}
+
+.close-button {
+    cursor: pointer;
+}
+
+.modal-title {
+    text-align: center;
+}
+
+.modal-thumbnail {
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.modal-footer {
+    border-top: 2px solid var(--secondary-color);
+}
+
+.modal-footer .btn {
+    font-family: 'DOS', Helvetica, sans-serif;
+    color: var(--main-color);
+    background-color: var(--background-color);
+    filter: drop-shadow(0 1px 3px);
+    border: none;
+    border-radius: 0px;
+}
+
+.modal-footer .btn:hover {
+    color: var(--main-color);
+    background-color: var(--background-color);
+}
+
+.modal-footer .btn .btn-selected {
+    display: none;
+}
+
+.modal-footer .btn:hover .btn-unselected {
+    display: none;
+}
+
+.modal-footer .btn:hover .btn-selected {
+    display: inline;
+}
+
+.fade2 {
+    transform: scale(0.9);
+    opacity: 0;
+    transition: all .05s linear;
+}
+
+.fade2.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0px 10px 0px 10px;
+    padding: 20px 30px;
+    gap: 20px;
+}
+
+.social-buttons a {
+    color: var(--main-color);
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.social-buttons a:hover {
+    color: var(--button-hover-color);
+}
+
+@media screen and (min-width: 320px) {
+    pre {
+        font-size: 1.5vw;
+    }
+
+    article {
+        width: 90%;
+    }
+
+    .card {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 568px) {
+    .card {
+        width: 215px;
+    }
+}
+
+/* ≥1024px width */
+@media screen and (min-width: 1024px)	{
+    article {
+        width: 940px;
+    }
+
+    pre {
+        font-size: 90%;
+    }
+
+    .card {
+        width: 270px;
+    }
+}
