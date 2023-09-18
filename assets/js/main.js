@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Modal
     document.getElementById('renrModalContainer').innerHTML = createProjectModal(
         'RENR Safety App',
-        'A web app that digitizes a safety form used by BCIT’s Renewable Resources (RENR) program. Allows users to identify hazards when working in the field, and ensure they have the appropriate control measures. Created with three other team members as part of a 5-week projects course.',
+        'A web app that digitizes a safety form used by BCIT’s Renewable Resources (RENR) program. Allows users to identify hazards when working in the field and ensure they have the appropriate control measures. Frontend built with React, backend built with Firebase. Created with three other team members as part of a 5-week projects course.',
         'images/renr.jpg',
         'renrModal',
         undefined,
@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Modal
     document.getElementById('bussinModalContainer').innerHTML = createProjectModal(
         'Bussin',
-        'Uses the TransLink API. Created with two other team memebers as part of our Mobile Dev course.',
+        'A transit-focused Android app that allows users to see upcoming bus schedules and real-time bus locations. Uses the TransLink API. Built using Java in Android Studio. Created with two other team memebers as part of our Mobile Dev course.',
         'images/bussin.jpg',
         'bussinModal',
         'https://github.com/JacksonMars/AndroidProject',
@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Modal
     document.getElementById('bongoCatModalContainer').innerHTML = createProjectModal(
         'Bongo Cat Clone',
-        'A simple, fun, musical project made using jQuery. May contain an easter egg or two...',
+        'A simple, fun, musical project made using HTML, CSS, and jQuery. May contain an easter egg or two...',
         'images/bongo.jpg',
         'bongoModal',
         'https://github.com/fijiman24/bongo-cat-clone',
@@ -240,7 +240,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Modal
     document.getElementById('ubcModalContainer').innerHTML = createProjectModal(
         'A Heaven of Misery',
-        'An essay shared in UBC\'s Art\'s One journal. An analysis of William Blake\'s poem "The Chimney Sweeper". Written in my first year at UBC; a relic of a past academic life.',
+        'An essay shared in UBC\'s Art\'s One 2017 journal. An analysis of William Blake\'s poem "The Chimney Sweeper". Written in my first year at UBC; a relic of a past academic life.',
         'images/ubc.jpg',
         'ubcModal',
         undefined,
@@ -259,7 +259,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Modal
     document.getElementById('trophyGuideModalContainer').innerHTML = createProjectModal(
         'Jump King Trophy Guide',
-        'A PlayStation trophy guide I wrote for a video game. I liked Jump King so much I wanted to make a guide to help new players beat the game.',
+        'A PlayStation trophy guide I wrote for a video game. Not academic, but something I\'m proud of (and might serve as a sample of my communication skills).',
         'images/trophy_guide.jpg',
         'trophyGuideModal',
         undefined,
