@@ -29,8 +29,7 @@ pre {
 }
 
 pre {
-    float: left;
-    z-index: 1000;
+    margin-top: 40px;
 }
 
 article {
@@ -197,7 +196,7 @@ article {
 
 @media screen and (min-width: 320px) {
     pre {
-        font-size: 1.5vw;
+        font-size: 1.3vw;
     }
 
     article {
@@ -206,6 +205,16 @@ article {
 
     .card {
         width: 100%;
+    }
+}
+
+@media screen and (min-width: 350px) {
+    article {
+        width: 90%;
+    }
+
+    .card {
+        width: 275px;
     }
 }
 
