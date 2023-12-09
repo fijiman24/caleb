@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function () {
         'images/renr.jpg',
         'renrModal',
         undefined,
-        undefined,
+        'https://renr-bcit.web.app/login',
     );
 
     // Bussin
