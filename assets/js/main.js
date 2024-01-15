@@ -154,22 +154,22 @@ document.addEventListener('DOMContentLoaded', function () {
         'https://renr-bcit.web.app/login',
     );
 
-    // Bussin
+    // Inventory Manager
     // Card
-    document.getElementById('bussinCardContainer').innerHTML = createProjectCard(
-        'Bussin',
-        'A transit-focused Android app that allows users to see upcoming bus schedules and real-time bus locations.',
-        'images/bussin.jpg',
-        'bussinModal',
+    document.getElementById('inventoryCardContainer').innerHTML = createProjectCard(
+        'WhatUGot?',
+        'An Android app for managing inventory.',
+        'images/inventory_manager.jpg',
+        'inventoryModal',
     );
 
     // Modal
-    document.getElementById('bussinModalContainer').innerHTML = createProjectModal(
-        'Bussin',
-        'A transit-focused Android app that allows users to see upcoming bus schedules and real-time bus locations. Uses the TransLink API. Built using Java in Android Studio. Created with two other team memebers as part of our Mobile Dev course.',
-        'images/bussin.jpg',
-        'bussinModal',
-        'https://github.com/JacksonMars/AndroidProject',
+    document.getElementById('inventoryModalContainer').innerHTML = createProjectModal(
+        'WhatUGot?',
+        'An Android app for managing inventory. Personal project, made in Kotlin using Android Studio.',
+        'images/inventory_manager.jpg',
+        'inventoryModal',
+        'https://github.com/fijiman24/InventoryManager',
     );
 
     // // Cancer Predictor
