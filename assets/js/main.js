@@ -1,71 +1,142 @@
-// counter for name change
-var i = 0;
+const colorPalettes = {
+  orange: {
+    mainColor: "rgba(255, 168, 59, 255)",
+    backgroundColor: "rgb(31, 20, 7)",
+    buttonHoverColor: "rgb(175, 114, 39)",
+  },
+  blue: {
+    mainColor: "#2ecfff",
+    backgroundColor: "#0a2c36",
+    buttonHoverColor: "#1a6a83",
+  },
+  green: {
+    mainColor: "#1bff80",
+    backgroundColor: "rgb(3, 29, 3)",
+    buttonHoverColor: "rgb(13, 131, 13)",
+  },
+};
 
-// Orange color palette
-let orangeMainColor = 'rgba(255, 168, 59, 255)';
-let orangeBackgroundColor = 'rgb(31, 20, 7)';
-let orangeButtonHoverColor = 'rgb(175, 114, 39)';
-
-// Blue color palette
-let blueMainColor = '#2ecfff';
-let blueBackgroundColor = '#0a2c36';
-let blueButtonHoverColor = '#1a6a83';
-
-// Green color palette
-let greenMainColor = '#1bff80';
-let greenBackgroundColor = 'rgb(3, 29, 3)';
-let greenButtonHoverColor = 'rgb(13, 131, 13)';
-
-// Change welcome message text and color palette
-document.getElementById("website-name").onclick = function myFunction() {
-    var newName;
-    i++;
-    if (i == 0) {
-        newName = `       
+const welcomeMessages = [
+  {
+    message: (newName = `       
  ██████╗ █████╗ ██╗     ███████╗██████╗ ██╗   ██╗███████╗██████╗ ███╗   ███╗ █████╗     ██████╗ ██████╗ ███╗   ███╗
 ██╔════╝██╔══██╗██║     ██╔════╝██╔══██╗██║   ██║██╔════╝██╔══██╗████╗ ████║██╔══██╗   ██╔════╝██╔═══██╗████╗ ████║
 ██║     ███████║██║     █████╗  ██████╔╝██║   ██║█████╗  ██████╔╝██╔████╔██║███████║   ██║     ██║   ██║██╔████╔██║
 ██║     ██╔══██║██║     ██╔══╝  ██╔══██╗╚██╗ ██╔╝██╔══╝  ██╔══██╗██║╚██╔╝██║██╔══██║   ██║     ██║   ██║██║╚██╔╝██║
 ╚██████╗██║  ██║███████╗███████╗██████╔╝ ╚████╔╝ ███████╗██║  ██║██║ ╚═╝ ██║██║  ██║██╗╚██████╗╚██████╔╝██║ ╚═╝ ██║
  ╚═════╝╚═╝  ╚═╝╚══════╝╚══════╝╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝
-        `;
-        document.documentElement.style.setProperty('--main-color', orangeMainColor);
-        document.documentElement.style.setProperty('--background-color', orangeBackgroundColor);
-        document.documentElement.style.setProperty('--button-hover-color', orangeButtonHoverColor);
-    }
-    else if (i == 1) {
-        newName = `
+        `),
+    colorPalette: colorPalettes.orange,
+  },
+  {
+    message: `
  e88~-_            888           888       d88b               e88~-_                                            
 d888   \\   /~~~8e  888  e88~~8e  888-~88e  Y88P  d88~\\       d888   \\  e88~-_  888-~\\ 888-~88e  e88~~8e  888-~\\ 
 8888           88b 888 d888  88b 888  888b __/  C888         8888     d888   i 888    888  888 d888  88b 888    
 8888      e88~-888 888 8888__888 888  8888       Y88b        8888     8888   | 888    888  888 8888__888 888    
 Y888   / C888  888 888 Y888    , 888  888P        888D       Y888   / Y888   ' 888    888  888 Y888    , 888    
  "88_-~   "88_-888 888  "88___/  888-_88"       \\_88P         "88_-~   "88_-~  888    888  888  "88___/  888     
-        `;
-        document.documentElement.style.setProperty('--main-color', greenMainColor);
-        document.documentElement.style.setProperty('--background-color', greenBackgroundColor);
-        document.documentElement.style.setProperty('--button-hover-color', greenButtonHoverColor);
-    }
-    else {
-        newName = `
+        `, // your welcome message here
+    colorPalette: colorPalettes.green,
+  },
+  {
+    message: `
 ▄▄▄█████▓██░ ██▓█████     ▄████▄  ▄▄▄      ██▓   ▓█████ ▄▄▄▄      ▒███████▒▒█████  ███▄    █▓█████ 
    ██▒ ▓▓██░ ██▓█   ▀    ▒██▀ ▀█ ▒████▄   ▓██▒   ▓█   ▀▓█████▄         ███▒██▒  ██▒██ ▀█   █▓█   ▀ 
   ▓██░ ▒▒██▀▀██▒███      ▒▓█    ▄▒██  ▀█▄ ▒██░   ▒███  ▒██▒ ▄██       ███░▒██░  ██▓██  ▀█ ██▒███   
   ▓██▓ ░░▓█ ░██▒▓█  ▄    ▒▓▓▄ ▄██░██▄▄▄▄██▒██░   ▒▓█  ▄▒██░█▀       ███   ▒██   ██▓██▒  ▐▌██▒▓█  ▄ 
   ▒██▒ ░░▓█▒░██░▒████▒    ▒▓███▀ ░▓█   ▓██░██████░▒████░▓█  ▀█▓   ▒███████░ ████▓▒▒██░   ▓██░▒████▒
                                                         ▒▓███▀
-        `;
-        i = -1;
-        document.documentElement.style.setProperty('--main-color', blueMainColor);
-        document.documentElement.style.setProperty('--background-color', blueBackgroundColor);
-        document.documentElement.style.setProperty('--button-hover-color', blueButtonHoverColor);
-    }
-    document.getElementById("website-name").innerHTML = newName;
+        `, // your welcome message here
+    colorPalette: colorPalettes.blue,
+  },
+];
+
+const projects = [
+  {
+    title: "RENR Safety App",
+    text: "A web app that digitizes a safety form used by BCIT's Renewable Resources (RENR) program.",
+    imageSrc: "images/renr2.jpg",
+    id: "renr",
+    githubLink: undefined,
+    siteLink: "https://renr-bcit.web.app/login",
+  },
+  {
+    title: "WhatUGot?",
+    text: "An Android app for managing inventory.",
+    imageSrc: "images/inventory_manager.jpg",
+    id: "inventory",
+    githubLink: "https://github.com/fijiman24/InventoryManager",
+    siteLink: undefined,
+  },
+  {
+    title: "Bongo Cat Clone",
+    text: "A simple, fun, musical project made using jQuery.",
+    imageSrc: "images/bongo.jpg",
+    id: "bongoCat",
+    githubLink: "https://github.com/fijiman24/bongo-cat-clone",
+    siteLink: "https://fijiman24.github.io/bongo-cat-clone/",
+  },
+  {
+    title: "Sector Six",
+    text: "A text-based space adventure game made using Python.",
+    imageSrc: "images/sector_six.jpg",
+    id: "sectorSix",
+    githubLink: "https://github.com/fijiman24/text-based-adventure",
+    siteLink: undefined,
+  },
+  {
+    title: "A Heaven of Misery",
+    text: "An essay shared in UBC's Art's One journal.",
+    imageSrc: "images/ubc.jpg",
+    id: "ubc",
+    githubLink: undefined,
+    siteLink:
+      "https://artsone.arts.ubc.ca/student-journal/songs-of-innocence-and-of-experience-a-heaven-of-misery/",
+  },
+  {
+    title: "Jump King Trophy Guide",
+    text: "A PlayStation trophy guide I wrote for a video game.",
+    imageSrc: "images/trophy_guide.jpg",
+    id: "trophyGuide",
+    githubLink: undefined,
+    siteLink: "https://psnprofiles.com/guide/10474-jump-king-trophy-guide",
+  },
+  //   {
+  //     title: "Cancer Classifier",
+  //     text: "Using predictive analytics to predict whether a tumor is malignant or benign.",
+  //     imageSrc: "images/bongo.jpg",
+  //     id: "cancerPredictor",
+  //     githubLink: "https://github.com/fijiman24/4949A2",
+  //     siteLink: "https://cancer-5v51.onrender.com/",
+  //   },
+];
+
+// Counter for name change
+var i = 0;
+
+// Change welcome message text and color palette
+document.getElementById("website-name").onclick = function myFunction() {
+  i = (i + 1) % welcomeMessages.length;
+  const { message, colorPalette } = welcomeMessages[i];
+  document.getElementById("website-name").innerHTML = message;
+  document.documentElement.style.setProperty(
+    "--main-color",
+    colorPalette.mainColor
+  );
+  document.documentElement.style.setProperty(
+    "--background-color",
+    colorPalette.backgroundColor
+  );
+  document.documentElement.style.setProperty(
+    "--button-hover-color",
+    colorPalette.buttonHoverColor
+  );
 };
 
 // Create Project Cards
 function createProjectCard(title, text, imageSrc, targetModalId) {
-    return `
+  return `
     <div class="card" data-bs-toggle="modal" data-bs-target="#${targetModalId}">
         <img src="${imageSrc}" class="card-img-top" alt="...">
         <div class="card-body">
@@ -74,33 +145,33 @@ function createProjectCard(title, text, imageSrc, targetModalId) {
         </div>
     </div>
     `;
-};
+}
 
 // Create Project Detail Modals
 function createProjectModal(title, text, imageSrc, id, githubLink, siteLink) {
-    // Github and Site buttons are optional
-    let githubButton = '';
-    let siteButton = '';
+  // Github and Site buttons are optional
+  let githubButton = "";
+  let siteButton = "";
 
-    if (githubLink != undefined) {
-        githubButton = `
+  if (githubLink != undefined) {
+    githubButton = `
         <a href="${githubLink}" target="_blank" class="btn">
             <span class="btn-unselected"><i class="bi bi-box-arrow-up-right"></i> GitHub
             </span>
             <span class="btn-selected">&gt; <i class="bi bi-box-arrow-up-right"></i> GitHub &lt;</span>
         </a>
-    `
-    };
+    `;
+  }
 
-    if (siteLink != undefined) {
-        siteButton = `
+  if (siteLink != undefined) {
+    siteButton = `
         <a href="${siteLink}" target="_blank" class="btn">
             <span class="btn-unselected"><i class="bi bi-box-arrow-up-right"></i> Site</span>
             <span class="btn-selected">&gt; <i class="bi bi-box-arrow-up-right"></i> Site &lt;</span>
-        </a>`
-    };
+        </a>`;
+  }
 
-    return `
+  return `
     <div class="modal fade2" id="${id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content-container">
@@ -121,11 +192,12 @@ function createProjectModal(title, text, imageSrc, id, githubLink, siteLink) {
             </div>
         </div>
     </div>
-    `
-};
+    `;
+}
 
-document.addEventListener('DOMContentLoaded', function () {
-    let newName = `       
+document.addEventListener("DOMContentLoaded", function () {
+  // Set default website header
+  let newName = `       
     ██████╗ █████╗ ██╗     ███████╗██████╗ ██╗   ██╗███████╗██████╗ ███╗   ███╗ █████╗     ██████╗ ██████╗ ███╗   ███╗
    ██╔════╝██╔══██╗██║     ██╔════╝██╔══██╗██║   ██║██╔════╝██╔══██╗████╗ ████║██╔══██╗   ██╔════╝██╔═══██╗████╗ ████║
    ██║     ███████║██║     █████╗  ██████╔╝██║   ██║█████╗  ██████╔╝██╔████╔██║███████║   ██║     ██║   ██║██╔████╔██║
@@ -133,136 +205,27 @@ document.addEventListener('DOMContentLoaded', function () {
    ╚██████╗██║  ██║███████╗███████╗██████╔╝ ╚████╔╝ ███████╗██║  ██║██║ ╚═╝ ██║██║  ██║██╗╚██████╗╚██████╔╝██║ ╚═╝ ██║
     ╚═════╝╚═╝  ╚═╝╚══════╝╚══════╝╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝
 `;
-    document.getElementById("website-name").innerHTML = newName;
+  document.getElementById("website-name").innerHTML = newName;
 
-    // Renr
-    // Card
-    document.getElementById('renrCardContainer').innerHTML = createProjectCard(
-        'RENR Safety App',
-        'A web app that digitizes a safety form used by BCIT\'s Renewable Resources (RENR) program.',
-        'images/renr2.jpg',
-        'renrModal',
+  // Create cards and modals for each project
+  projects.forEach((project) => {
+    const cardHtml = createProjectCard(
+      project.title,
+      project.text,
+      project.imageSrc,
+      project.id
+    );
+    const modalHtml = createProjectModal(
+      project.title,
+      project.text,
+      project.imageSrc,
+      project.id,
+      project.githubLink,
+      project.siteLink
     );
 
-    // Modal
-    document.getElementById('renrModalContainer').innerHTML = createProjectModal(
-        'RENR Safety App',
-        'A web app that digitizes a safety form used by BCIT’s Renewable Resources (RENR) program. Allows users to identify hazards when working in the field and ensure they have the appropriate control measures. Frontend built with React, backend built with Firebase. Created with three other team members as part of a 5-week projects course.',
-        'images/renr.jpg',
-        'renrModal',
-        undefined,
-        'https://renr-bcit.web.app/login',
-    );
-
-    // Inventory Manager
-    // Card
-    document.getElementById('inventoryCardContainer').innerHTML = createProjectCard(
-        'WhatUGot?',
-        'An Android app for managing inventory.',
-        'images/inventory_manager.jpg',
-        'inventoryModal',
-    );
-
-    // Modal
-    document.getElementById('inventoryModalContainer').innerHTML = createProjectModal(
-        'WhatUGot?',
-        'An Android app for managing inventory. Personal project, made in Kotlin using Android Studio.',
-        'images/inventory_manager.jpg',
-        'inventoryModal',
-        'https://github.com/fijiman24/InventoryManager',
-    );
-
-    // // Cancer Predictor
-    // // Card
-    // document.getElementById('cancerPredictorCardContainer').innerHTML = createProjectCard(
-    //     'Cancer Classifier',
-    //     'Using predictive analytics to predict whether a tumor is malignant or benign.',
-    //     'images/bongo.jpg',
-    //     'cancerPredictorModal',
-    // );
-
-    // // Modal
-    // document.getElementById('cancerPredictorModalContainer').innerHTML = createProjectModal(
-    //     'Cancer Classifier',
-    //     'Using predictive analytics to predict whether a tumor is malignant or benign.',
-    //     'images/bongo.jpg',
-    //     'cancerPredictorModal',
-    //     'https://github.com/fijiman24/4949A2',
-    //     'https://cancer-5v51.onrender.com/',
-    // );
-
-    // Bongo Cat
-    // Card
-    document.getElementById('bongoCatCardContainer').innerHTML = createProjectCard(
-        'Bongo Cat Clone',
-        'A simple, fun, musical project made using jQuery.',
-        'images/bongo.jpg',
-        'bongoModal',
-    );
-
-    // Modal
-    document.getElementById('bongoCatModalContainer').innerHTML = createProjectModal(
-        'Bongo Cat Clone',
-        'A simple, fun, musical project made using HTML, CSS, and jQuery. May contain an easter egg or two...',
-        'images/bongo.jpg',
-        'bongoModal',
-        'https://github.com/fijiman24/bongo-cat-clone',
-        'https://fijiman24.github.io/bongo-cat-clone/',
-    );
-
-    // Sector Six
-    // Card
-    document.getElementById('sectorSixCardContainer').innerHTML = createProjectCard(
-        'Sector Six',
-        'A text-based space adventure game made using Python.',
-        'images/sector_six.jpg',
-        'sectorSixModal',
-    );
-
-    // Modal
-    document.getElementById('sectorSixModalContainer').innerHTML = createProjectModal(
-        'Sector Six',
-        'A text-based space adventure game made using Python. Created with a partner as a final project for our Programming Methods course at BCIT. Complete with unit tests for every. Single. Function.',
-        'images/sector_six.jpg',
-        'sectorSixModal',
-        'https://github.com/fijiman24/text-based-adventure',
-    );
-
-    // UBC
-    // Card
-    document.getElementById('ubcCardContainer').innerHTML = createProjectCard(
-        'A Heaven of Misery',
-        'An essay shared in UBC\'s Art\'s One journal.',
-        'images/ubc.jpg',
-        'ubcModal',
-    );
-
-    // Modal
-    document.getElementById("ubcModalContainer").innerHTML = createProjectModal(
-      "A Heaven of Misery",
-      "An essay shared in UBC's Art's One 2017 journal. An analysis of William Blake's poem \"The Chimney Sweeper\". Written in my first year at UBC; a relic of a past academic life.",
-      "images/ubc.jpg",
-      "ubcModal",
-      undefined,
-      "https://artsone.arts.ubc.ca/student-journal/songs-of-innocence-and-of-experience-a-heaven-of-misery/"
-    );
-
-    // Trophy Guide
-    // Card
-    document.getElementById('trophyGuideCardContainer').innerHTML = createProjectCard(
-        'Jump King Trophy Guide',
-        'A PlayStation trophy guide I wrote for a video game.',
-        'images/trophy_guide.jpg',
-        'trophyGuideModal',
-    );
-
-    // Modal
-    document.getElementById('trophyGuideModalContainer').innerHTML = createProjectModal(
-        'Jump King Trophy Guide',
-        'A PlayStation trophy guide I wrote for a video game. Not academic, but something I\'m proud of (and might serve as a sample of my communication skills).',
-        'images/trophy_guide.jpg',
-        'trophyGuideModal',
-        undefined,
-        'https://psnprofiles.com/guide/10474-jump-king-trophy-guide',
-    );
+    document.getElementById(`${project.id}CardContainer`).innerHTML = cardHtml;
+    document.getElementById(`${project.id}ModalContainer`).innerHTML =
+      modalHtml;
+  });
 });
