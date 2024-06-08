@@ -238,13 +238,13 @@ document.addEventListener('DOMContentLoaded', function () {
     );
 
     // Modal
-    document.getElementById('ubcModalContainer').innerHTML = createProjectModal(
-        'A Heaven of Misery',
-        'An essay shared in UBC\'s Art\'s One 2017 journal. An analysis of William Blake\'s poem "The Chimney Sweeper". Written in my first year at UBC; a relic of a past academic life.',
-        'images/ubc.jpg',
-        'ubcModal',
-        undefined,
-        'https://artsone.arts.ubc.ca/news/a-heaven-of-misery/',
+    document.getElementById("ubcModalContainer").innerHTML = createProjectModal(
+      "A Heaven of Misery",
+      "An essay shared in UBC's Art's One 2017 journal. An analysis of William Blake's poem \"The Chimney Sweeper\". Written in my first year at UBC; a relic of a past academic life.",
+      "images/ubc.jpg",
+      "ubcModal",
+      undefined,
+      "https://artsone.arts.ubc.ca/student-journal/songs-of-innocence-and-of-experience-a-heaven-of-misery/"
     );
 
     // Trophy Guide
