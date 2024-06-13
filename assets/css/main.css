@@ -194,7 +194,7 @@ article {
     color: var(--button-hover-color);
 }
 
-@media screen and (min-width: 320px) {
+@media screen and (min-width: 1px) {
     pre {
         font-size: 1.3vw;
     }
@@ -218,16 +218,20 @@ article {
     }
 }
 
-@media screen and (min-width: 568px) {
+@media screen and (min-width: 930px) {
+    article {
+        width: 895px;
+    }
+
     .card {
-        width: 215px;
+        width: 270px;
     }
 }
 
-/* ≥1024px width */
-@media screen and (min-width: 1024px)	{
+/* ≥1250px width */
+@media screen and (min-width: 1250px)	{
     article {
-        width: 940px;
+        width: 1230px;
     }
 
     pre {

@@ -24,6 +24,14 @@ const projects = [
     siteLink: "https://fijiman24.github.io/bongo-cat-clone/",
   },
   {
+    title: "Bussin'",
+    text: "A transit-focused Android app that allows users to see upcoming bus schedules and real-time bus locations.",
+    imageSrc: "images/bussin.jpg",
+    id: "bussin",
+    githubLink: "https://github.com/JacksonMars/AndroidProject",
+    siteLink: undefined,
+  },
+  {
     title: "Sector Six",
     text: "A text-based space adventure game made using Python.",
     imageSrc: "images/sector_six.jpg",
@@ -33,7 +41,7 @@ const projects = [
   },
   {
     title: "A Heaven of Misery",
-    text: "An essay shared in UBC's Art's One journal.",
+    text: "An essay shared in UBC's Arts One journal.",
     imageSrc: "images/ubc.jpg",
     id: "ubc",
     githubLink: undefined,
@@ -41,21 +49,22 @@ const projects = [
       "https://artsone.arts.ubc.ca/student-journal/songs-of-innocence-and-of-experience-a-heaven-of-misery/",
   },
   {
-    title: "Jump King Trophy Guide",
-    text: "A PlayStation trophy guide I wrote for a video game.",
-    imageSrc: "images/trophy_guide.jpg",
+    title: "PlayStation Trophy Guides",
+    text: "Trophy guides for Jump King and Wild Hearts.",
+    imageSrc: "images/trophy_guides.jpg",
     id: "trophyGuide",
     githubLink: undefined,
-    siteLink: "https://psnprofiles.com/guide/10474-jump-king-trophy-guide",
+    siteLink: "https://psnprofiles.com/guides/FijiMan24",
   },
-  //   {
-  //     title: "Cancer Classifier",
-  //     text: "Using predictive analytics to predict whether a tumor is malignant or benign.",
-  //     imageSrc: "images/bongo.jpg",
-  //     id: "cancerPredictor",
-  //     githubLink: "https://github.com/fijiman24/4949A2",
-  //     siteLink: "https://cancer-5v51.onrender.com/",
-  //   },
+  {
+    title: "Cancer Classifier",
+    text: "Using predictive analytics to predict whether a tumor is malignant or benign.",
+    imageSrc: "images/cancer.jpg",
+    id: "cancerPredictor",
+    githubLink: "https://github.com/fijiman24/4949A2",
+    // siteLink: "https://cancer-5v51.onrender.com/", Loads too slowly
+    siteLink: undefined
+  },
 ];
 
 // Create Project Cards
