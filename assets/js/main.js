@@ -1,3 +1,4 @@
+import populateWorkExperience from "./workExperience.js";
 import populateProjects from "./projects.js";
 import changeWelcomeMessage from "./welcomeMessages.js";
 
@@ -17,5 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
     ╚═════╝╚═╝  ╚═╝╚══════╝╚══════╝╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝
 `;
   document.getElementById("website-name").innerHTML = newName;
+  populateWorkExperience();
   populateProjects();
 });
