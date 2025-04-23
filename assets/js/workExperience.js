@@ -15,10 +15,13 @@ const workExperience = [
   },
 ];
 
-// Create Work Experience Cards
-function createProjectCard(title, text, imageSrc, targetModalId) {
-  return `
-    <div class="card" data-bs-toggle="modal" data-bs-target="#${targetModalId}">
+// Create Work Experience elements
+function createProjectElements(experience) {
+  const { title, text, imageSrc, id, siteLink } = experience;
+
+  // Card
+  const cardHtml = `
+    <div class="card" data-bs-toggle="modal" data-bs-target="#${id}">
         <img src="${imageSrc}" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">${title}</h5>
@@ -26,22 +29,17 @@ function createProjectCard(title, text, imageSrc, targetModalId) {
         </div>
     </div>
     `;
-}
 
-// Create Work Experience Detail Modals
-function createProjectModal(title, text, imageSrc, id, siteLink) {
-  // Github and Site buttons are optional
-  let siteButton = "";
-
-  if (siteLink != undefined) {
-    siteButton = `
+  let siteButton = siteLink
+    ? `
         <a href="${siteLink}" target="_blank" class="btn">
             <span class="btn-unselected"><i class="bi bi-box-arrow-up-right"></i> Site</span>
             <span class="btn-selected">&gt; <i class="bi bi-box-arrow-up-right"></i> Site &lt;</span>
-        </a>`;
-  }
+        </a>`
+    : "";
 
-  return `
+  // Modal
+  const modalHtml = `
     <div class="modal fade2" id="${id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content-container">
@@ -62,28 +60,16 @@ function createProjectModal(title, text, imageSrc, id, siteLink) {
         </div>
     </div>
     `;
+
+  return { cardHtml, modalHtml };
 }
 
 const populateWorkExperience = () => {
   workExperience.forEach((experience) => {
-    const cardHtml = createProjectCard(
-      experience.title,
-      experience.text,
-      experience.imageSrc,
-      experience.id
-    );
-    const modalHtml = createProjectModal(
-      experience.title,
-      experience.text,
-      experience.imageSrc,
-      experience.id,
-      experience.siteLink
-    );
+    const { cardHtml, modalHtml } = createProjectElements(experience);
 
-    document.getElementById(`${experience.id}CardContainer`).innerHTML =
-      cardHtml;
-    document.getElementById(`${experience.id}ModalContainer`).innerHTML =
-      modalHtml;
+    document.getElementById(`${experience.id}CardContainer`).innerHTML = cardHtml;
+    document.getElementById(`${experience.id}ModalContainer`).innerHTML = modalHtml;
   });
 };
 
